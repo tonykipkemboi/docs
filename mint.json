@@ -122,7 +122,19 @@
         "tools/docxsearchtool",
         "tools/exasearchtool",
         "tools/filereadtool",
-        "tools/filewritetool"
+        "tools/filewritetool",
+        "tools/firecrawlcrawlwebsitetool",
+        "tools/firecrawlscrapewebsitetool",
+        "tools/firecrawlsearchtool",
+        "tools/githubsearchtool",
+        "tools/serperdevtool",
+        "tools/jsonsearchtool",
+        "tools/mdxsearchtool",
+        "tools/mysqltool",
+        "tools/nl2sqltool",
+        "tools/pdfsearchtool",
+        "tools/pgsearchtool",
+        "tools/scrapewebsitetool"
       ]
     },
     {
