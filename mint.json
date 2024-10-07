@@ -1,51 +1,55 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "CrewAI",
+  "theme": "venus",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#EB6658",
+    "light": "#F3A78B",
+    "dark": "#C94C3C",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#737373",
+      "to": "#EB6658"
     }
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
-  ],
+  "seo": {
+    "indexHiddenPages": false
+  },
+  "modeToggle": {
+    "default": "dark",
+    "isHidden": false
+  },
+  "feedback": {
+    "suggestEdit": true,
+    "raiseIssue": true,
+    "thumbsRating": true
+  },
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "GitHub",
+    "url": "https://github.com/crewAIInc/crewAI"
+  },
+  "primaryTab": {
+    "name": "Get Started"
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "Examples",
+      "url": "examples"
     }
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
       "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "icon": "discourse",
+      "url": "https://community.crewai.com"
     },
     {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "Changelog",
+      "icon": "timeline",
+      "url": "https://github.com/crewAIInc/crewAI/releases"
     }
   ],
   "navigation": [
@@ -53,39 +57,66 @@
       "group": "Get Started",
       "pages": [
         "introduction",
-        "quickstart",
-        "development"
+        "installation",
+        "quickstart"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Core Concepts",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "concepts/agents",
+        "concepts/tasks",
+        "concepts/tools",
+        "concepts/processes",
+        "concepts/crews",
+        "concepts/collaboration",
+        "concepts/pipeline",
+        "concepts/training",
+        "concepts/memory",
+        "concepts/planning",
+        "concepts/testing",
+        "concepts/flows",
+        "concepts/cli",
+        "concepts/llms",
+        "concepts/langchain-tools",
+        "concepts/llamaindex-tools"
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "How to Guides",
       "pages": [
-        "api-reference/introduction"
+        "how-to/create-custom-tools",
+        "how-to/sequential-process",
+        "how-to/hierachical-process",
+        "how-to/custom-manager-agent",
+        "how-to/llm-connections",
+        "how-to/customizing-agents",
+        "how-to/coding-agents",
+        "how-to/force-tool-output-as-result",
+        "how-to/human-input-on-execution",
+        "how-to/kickoff-async",
+        "how-to/kickoff-for-each",
+        "how-to/replay-tasks-from-latest-crew-kickoff",
+        "how-to/conditional-tasks",
+        "how-to/agentops-observability",
+        "how-to/langtrace-observability"
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Examples",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "examples/example"
       ]
     }
   ],
+  "search": {
+    "prompt": "Search CrewAI docs"
+  },
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "website": "https://crewai.com",
+    "x": "https://x.com/crewAIInc",
+    "github": "https://github.com/crewAIInc/crewAI",
+    "linkedin": "https://www.linkedin.com/company/crewai-inc",
+    "youtube": "https://youtube.com/@crewAIInc"
   }
 }
