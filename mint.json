@@ -109,6 +109,23 @@
       ]
     },
     {
+      "group": "Tools",
+      "pages": [
+        "tools/browserbaseloadtool",
+        "tools/codedocssearchtool",
+        "tools/codeinterpretertool",
+        "tools/composiotool",
+        "tools/csvsearchtool",
+        "tools/dalletool",
+        "tools/directorysearchtool",
+        "tools/directoryreadtool",
+        "tools/docxsearchtool",
+        "tools/exasearchtool",
+        "tools/filereadtool",
+        "tools/filewritetool"
+      ]
+    },
+    {
       "group": "Telemetry",
       "pages": [
         "telemetry"
