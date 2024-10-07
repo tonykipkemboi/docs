@@ -1,99 +1,56 @@
 ---
 title: Installation & Setup
-description: 'Learn how to install CrewAI'
+description: A comprehensive guide to installing crewAI and its dependencies, including the latest updates and installation methods.
 icon: wrench
 ---
 
-<Info>
-  **Prerequisite** You should have installed Node.js (version 18.10.0 or
-  higher).
-</Info>
+## Install CrewAI
 
-Step 1. Install Mintlify on your OS:
+Welcome to crewAI! This guide will walk you through the installation process for crewAI and its dependencies. 
+CrewAI is a flexible and powerful AI framework that enables you to create and manage AI agents, tools, and tasks efficiently. 
+Let's get started! 🚀
 
-<CodeGroup>
+Make sure you have `Python >=3.10 <=3.13` installed on your system before you proceed.
 
-```bash npm
-npm i -g mintlify
+```shell
+# Install the main CrewAI package
+pip install crewai
+
+# Install the main CrewAI package and the tools package
+# that includes a series of helpful tools for your agents
+pip install 'crewai[tools]'
+
+# Alternatively, you can also use:
+pip install crewai crewai-tools
 ```
 
-```bash yarn
-yarn global add mintlify
+## Upgrade CrewAI
+
+To upgrade CrewAI and CrewAI Tools to the latest version, run the following command:
+
+```shell
+pip install --upgrade crewai crewai-tools
 ```
 
-</CodeGroup>
+## Verify the installation
 
-Step 2. Go to the docs are located (where you can find `mint.json`) and run the following command:
+To verify that `crewai` and `crewai-tools` are installed correctly, run the following command:
 
-```bash
-mintlify dev
+```shell
+pip freeze | grep crewai
 ```
 
-The documentation website is now available at `http://localhost:3000`.
+You should see the version number of `crewai` and `crewai-tools`.
 
-### Custom Ports
-
-Mintlify uses port 3000 by default. You can use the `--port` flag to customize the port Mintlify runs on. For example, use this command to run in port 3333:
-
-```bash
-mintlify dev --port 3333
+```shell
+crewai==0.X.X
+crewai-tools==0.X.X
 ```
 
-You will see an error like this if you try to run Mintlify in a port that's already taken:
+If you see the version number, then the installation was successful! 🎉
 
-```md
-Error: listen EADDRINUSE: address already in use :::3000
-```
+## Next steps
 
-## Mintlify Versions
+Now that you have installed `crewai` and `crewai-tools`, you're ready to spin up your first crew!
 
-Each CLI is linked to a specific version of Mintlify. Please update the CLI if your local website looks different than production.
-
-<CodeGroup>
-
-```bash npm
-npm i -g mintlify@latest
-```
-
-```bash yarn
-yarn global upgrade mintlify
-```
-
-</CodeGroup>
-
-## Deployment
-
-<Tip>
-  Unlimited editors available under the [Startup
-  Plan](https://mintlify.com/pricing)
-</Tip>
-
-You should see the following if the deploy successfully went through:
-
-<Frame>
-  <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} />
-</Frame>
-
-## Troubleshooting
-
-Here's how to solve some common problems when working with the CLI.
-
-<AccordionGroup>
-  <Accordion title="Mintlify is not loading">
-    Update to Node v18. Run `mintlify install` and try again.
-  </Accordion>
-  <Accordion title="No such file or directory on Windows">
-Go to the `C:/Users/Username/.mintlify/` directory and remove the `mint`
-folder. Then Open the Git Bash in this location and run `git clone
-https://github.com/mintlify/mint.git`.
-
-Repeat step 3.
-
-  </Accordion>
-  <Accordion title="Getting an unknown error">
-    Try navigating to the root of your device and delete the ~/.mintlify folder.
-    Then run `mintlify dev` again.
-  </Accordion>
-</AccordionGroup>
-
-Curious about what changed in a CLI version? [Check out the CLI changelog.](/changelog/command-line)
+Proceed to the [quickstart tutorial](/quickstart) for a step-by-step guide on how to create your first agent.

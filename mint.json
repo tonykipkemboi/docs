@@ -2,8 +2,8 @@
   "name": "CrewAI",
   "theme": "venus",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "logo/crew_only_logo.png",
+    "light": "logo/crew_only_logo.png"
   },
   "favicon": "/favicon.svg",
   "colors": {
@@ -87,7 +87,7 @@
       "pages": [
         "how-to/create-custom-tools",
         "how-to/sequential-process",
-        "how-to/hierachical-process",
+        "how-to/hierarchical-process",
         "how-to/custom-manager-agent",
         "how-to/llm-connections",
         "how-to/customizing-agents",

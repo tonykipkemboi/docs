@@ -50,7 +50,7 @@ Think of an agent as a member of a team, with specific skills and a particular j
 
 To create an agent, you would typically initialize an instance of the `Agent` class with the desired properties. Here's a conceptual example including all attributes:
 
-```python Example of creating an agent with all attributes
+```python Code example
 from crewai import Agent
 
 agent = Agent(
@@ -90,7 +90,7 @@ agent = Agent(
 
 Prompt templates are used to format the prompt for the agent. You can use to update the system, regular and response templates for the agent. Here's an example of how to set prompt templates:
 
-```python Setting prompt templates
+```python Code example
 agent = Agent(
         role="{topic} specialist",
         goal="Figure {goal} out",
@@ -109,12 +109,12 @@ agent = Agent(
 Extend your third-party agents like LlamaIndex, Langchain, Autogen or fully custom agents using the the CrewAI's `BaseAgent` class.
 
 <Note>   
-    **BaseAgent** includes attributes and methods required to integrate with your crews to run and delegate tasks to other agents within your own crew.
-    
-    CrewAI is a universal multi-agent framework that allows for all agents to work together to automate tasks and solve problems.
+  **BaseAgent** includes attributes and methods required to integrate with your crews to run and delegate tasks to other agents within your own crew.
 </Note>
 
-```python Example of bringing your own agent
+CrewAI is a universal multi-agent framework that allows for all agents to work together to automate tasks and solve problems.
+
+```python Code example
 from crewai import Agent, Task, Crew
 from custom_agent import CustomAgent # You need to build and extend your own agent logic with the CrewAI BaseAgent class then import it here.
 
@@ -155,4 +155,5 @@ crew = my_crew.kickoff(inputs={"input": "Mark Twain"})
 
 ## Conclusion
 
-Agents are the building blocks of the CrewAI framework. By understanding how to define and interact with agents, you can create sophisticated AI systems that leverage the power of collaborative intelligence.
+Agents are the building blocks of the CrewAI framework. By understanding how to define and interact with agents, 
+you can create sophisticated AI systems that leverage the power of collaborative intelligence.
