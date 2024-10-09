@@ -36,14 +36,14 @@ A crew in crewAI represents a collaborative group of agents working together to 
 | **Planning** *(optional)*             | `planning`             | Adds planning ability to the Crew. When activated before each Crew iteration, all Crew data is sent to an AgentPlanner that will plan the tasks and this plan will be added to each task description.                                                     |
 | **Planning LLM** *(optional)*         | `planning_llm`         | The language model used by the AgentPlanner in a planning process.                                                                                                                                                                                        |
 
-!!! note "Crew Max RPM"
-The `max_rpm` attribute sets the maximum number of requests per minute the crew can perform to avoid rate limits and will override individual agents' `max_rpm` settings if you set it.
+<Tip>
+**Crew Max RPM**: The `max_rpm` attribute sets the maximum number of requests per minute the crew can perform to avoid rate limits and will override individual agents' `max_rpm` settings if you set it.
+</Tip>
 
 
 ## Crew Output
 
-!!! note "Understanding Crew Outputs"
-The output of a crew in the crewAI framework is encapsulated within the `CrewOutput` class.
+The output of a crew in the CrewAI framework is encapsulated within the `CrewOutput` class.
 This class provides a structured way to access results of the crew's execution, including various formats such as raw strings, JSON, and Pydantic models.
 The `CrewOutput` includes the results from the final task output, token usage, and individual task outputs.
 
@@ -71,7 +71,7 @@ Once a crew has been executed, its output can be accessed through the `output` a
 
 #### Example
 
-```python
+```python Code
 # Example crew execution
 crew = Crew(
     agents=[research_agent, writer_agent],
@@ -103,7 +103,7 @@ Caches can be employed to store the results of tools' execution, making the proc
 
 After the crew execution, you can access the `usage_metrics` attribute to view the language model (LLM) usage metrics for all tasks executed by the crew. This provides insights into operational efficiency and areas for improvement.
 
-```python
+```python Code
 # Access the crew's usage metrics
 crew = Crew(agents=[agent1, agent2], tasks=[task1, task2])
 crew.kickoff()
@@ -119,7 +119,7 @@ print(crew.usage_metrics)
 
 Once your crew is assembled, initiate the workflow with the `kickoff()` method. This starts the execution process according to the defined process flow.
 
-```python
+```python Code
 # Start the crew's task execution
 result = my_crew.kickoff()
 print(result)
@@ -134,7 +134,7 @@ Once your crew is assembled, initiate the workflow with the appropriate kickoff 
 - `kickoff_async()`: Initiates the workflow asynchronously.
 - `kickoff_for_each_async()`: Executes tasks for each agent individually in an asynchronous manner.
 
-```python
+```python Code
 # Start the crew's task execution
 result = my_crew.kickoff()
 print(result)

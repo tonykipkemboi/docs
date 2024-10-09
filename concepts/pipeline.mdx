@@ -39,7 +39,8 @@ Each input creates its own kickoff, flowing through all stages of the pipeline. 
 
 ## Creating a Pipeline
 
-When creating a pipeline, you define a series of stages, each consisting of either a single crew or a list of crews for parallel execution. The pipeline ensures that each stage is executed in order, with the output of one stage feeding into the next.
+When creating a pipeline, you define a series of stages, each consisting of either a single crew or a list of crews for parallel execution. 
+The pipeline ensures that each stage is executed in order, with the output of one stage feeding into the next.
 
 ### Example: Assembling a Pipeline
 
@@ -80,8 +81,8 @@ my_pipeline = Pipeline(
 
 ## Pipeline Output
 
-!!! note "Understanding Pipeline Outputs"
-The output of a pipeline in the crewAI framework is encapsulated within the `PipelineKickoffResult` class. This class provides a structured way to access the results of the pipeline's execution, including various formats such as raw strings, JSON, and Pydantic models.
+The output of a pipeline in the CrewAI framework is encapsulated within the `PipelineKickoffResult` class. 
+This class provides a structured way to access the results of the pipeline's execution, including various formats such as raw strings, JSON, and Pydantic models.
 
 ### Pipeline Output Attributes
 
@@ -118,13 +119,17 @@ The output of a pipeline in the crewAI framework is encapsulated within the `Pip
 
 ### Accessing Pipeline Outputs
 
-Once a pipeline has been executed, its output can be accessed through the `PipelineOutput` object returned by the `process_runs` method. The `PipelineOutput` class provides access to individual `PipelineRunResult` objects, each representing a single run through the pipeline.
+Once a pipeline has been executed, its output can be accessed through the `PipelineOutput` object returned by the `process_runs` method. 
+The `PipelineOutput` class provides access to individual `PipelineRunResult` objects, each representing a single run through the pipeline.
 
 #### Example
 
 ```python
 # Define input data for the pipeline
-input_data = [{"initial_query": "Latest advancements in AI"}, {"initial_query": "Future of robotics"}]
+input_data = [
+    {"initial_query": "Latest advancements in AI"},
+    {"initial_query": "Future of robotics"}
+]
 
 # Execute the pipeline
 pipeline_output = await my_pipeline.process_runs(input_data)
@@ -192,11 +197,13 @@ my_pipeline = Pipeline(
 
 ### Routers in Pipelines
 
-Routers are a powerful feature in crewAI pipelines that allow for dynamic decision-making and branching within your workflow. They enable you to direct the flow of execution based on specific conditions or criteria, making your pipelines more flexible and adaptive.
+Routers are a powerful feature in crewAI pipelines that allow for dynamic decision-making and branching within your workflow. 
+They enable you to direct the flow of execution based on specific conditions or criteria, making your pipelines more flexible and adaptive.
 
 #### What is a Router?
 
-A router in crewAI is a special component that can be included as a stage in your pipeline. It evaluates the input data and determines which path the execution should take next. This allows for conditional branching in your pipeline, where different crews or sub-pipelines can be executed based on the router's decision.
+A router in crewAI is a special component that can be included as a stage in your pipeline. It evaluates the input data and determines which path the execution should take next. 
+This allows for conditional branching in your pipeline, where different crews or sub-pipelines can be executed based on the router's decision.
 
 #### Key Components of a Router
 
@@ -252,7 +259,8 @@ inputs = [{"email": "..."}, {"email": "..."}]  # List of email data
 main_pipeline.kickoff(inputs=inputs)
 ```
 
-In this example, the router decides between an urgent pipeline and a normal pipeline based on the urgency score of the email. If the urgency score is greater than 7, it routes to the urgent pipeline; otherwise, it uses the normal pipeline. If the input doesn't include an urgency score, it defaults to just the classification crew.
+In this example, the router decides between an urgent pipeline and a normal pipeline based on the urgency score of the email. If the urgency score is greater than 7, 
+it routes to the urgent pipeline; otherwise, it uses the normal pipeline. If the input doesn't include an urgency score, it defaults to just the classification crew.
 
 #### Benefits of Using Routers
 

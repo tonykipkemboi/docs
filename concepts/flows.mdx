@@ -485,21 +485,22 @@ This command will generate a new CrewAI project with the necessary folder struct
 
 After running the `crewai create flow name_of_flow` command, you will see a folder structure similar to the following:
 
-``` text
-name_of_flow/
-├── crews/
-│   └── poem_crew/
-│       ├── config/
-│       │   ├── agents.yaml
-│       │   └── tasks.yaml
-│       ├── poem_crew.py
-├── tools/
-│   └── custom_tool.py
-├── main.py
-├── README.md
-├── pyproject.toml
-└── .gitignore
-```
+| Directory/File                   | Description                                                       |
+|:---------------------------------|:------------------------------------------------------------------|
+| `name_of_flow/`                  | Root directory for the flow.                                      |
+| ├── `crews/`                     | Contains directories for specific crews.                          |
+| │   └── `poem_crew/`             | Directory for the "poem_crew" with its configurations and scripts.|
+| │       ├── `config/`            | Configuration files directory for the "poem_crew".                |
+| │       │   ├── `agents.yaml`    | YAML file defining the agents for "poem_crew".                    |
+| │       │   └── `tasks.yaml`     | YAML file defining the tasks for "poem_crew".                     |
+| │       ├── `poem_crew.py`       | Script for "poem_crew" functionality.                             |
+| ├── `tools/`                     | Directory for additional tools used in the flow.                  |
+| │   └── `custom_tool.py`         | Custom tool implementation.                                       |
+| ├── `main.py`                    | Main script for running the flow.                                 |
+| ├── `README.md`                  | Project description and instructions.                             |
+| ├── `pyproject.toml`             | Configuration file for project dependencies and settings.         |
+| └── `.gitignore`                 | Specifies files and directories to ignore in version control.     |
+
 
 ### Building Your Crews
 

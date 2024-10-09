@@ -4,90 +4,31 @@ description: Build your first AI agent with CrewAI in under 5 minutes.
 icon: rocket
 ---
 
-
-To get started with CrewAI, you need to have `crewai` and `crewai-tools` installed. 
-If you haven't installed them yet, you can do so by following the [installation guide](/installation).
-
-Once you have installed the packages, you can start creating your own agents, tools, and tasks.
-
-## Installation and Project Setup
-
-CrewAI uses [Poetry](https://python-poetry.org/) for dependency management and package handling, offering a seamless setup and execution experience.
-
-<Steps>
-  <Step title="Installation">
-  First, if you haven't already, install Poetry:
-    <CodeGroup>
-      ```shell Terminal
-      pip install poetry
-      ```
-    </CodeGroup>
-  Then, install CrewAI if you haven't already:
-    <CodeGroup>
-      ```shell Terminal
-      pip install crewai crewai-tools
-      ```
-    </CodeGroup>
-  </Step>
-  <Step title="Create a new CrewAI project using the YAML Template Configuration">
-  To create a new CrewAI project, run the following CLI (Command Line Interface) command:
-    <CodeGroup>
-      ```shell Terminal
-      crewai create crew <project_name>
-      ```
-    </CodeGroup>
-  This command creates a new project folder with the following structure:
-    | File/Directory          | Description                                      |
-    |:------------------------|:-------------------------------------------------|
-    | `my_project/`           | Root directory of the project                    |
-    | ├── `.gitignore`        | Specifies files and directories to ignore in Git |
-    | ├── `pyproject.toml`    | Project configuration and dependencies           |
-    | ├── `README.md`         | Project documentation                            |
-    | ├── `.env`              | Environment variables                            |
-    | └── `src/`              | Source code directory                            |
-    | &nbsp;&nbsp;&nbsp;&nbsp;└── `my_project/` | Main application package                      |
-    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── `__init__.py` | Marks the directory as a Python package     |
-    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── `main.py`     | Main application script                    |
-    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── `crew.py`     | Crew-related functionalities                |
-    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── `tools/`      | Custom tools directory                      |
-    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│   ├── `custom_tool.py` | Custom tool implementation              |
-    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│   └── `__init__.py`    | Marks tools directory as a package       |
-    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── `config/`     | Configuration files directory               |
-    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── `agents.yaml`  | Agent configurations                    |
-    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── `tasks.yaml`   | Task configurations                      |
-
-  You can now start developing your crew by editing the files in the `src/my_project` folder. 
-  The `main.py` file is the entry point of the project, the `crew.py` file is where you define your crew, the `agents.yaml` file is where you define your agents, 
-  and the `tasks.yaml` file is where you define your tasks.
-  </Step>   
-  <Step title="Customize your project">
-  To customize your project, you can:
-    - Modify `src/my_project/config/agents.yaml` to define your agents.
-    - Modify `src/my_project/config/tasks.yaml` to define your tasks.
-    - Modify `src/my_project/crew.py` to add your own logic, tools, and specific arguments.
-    - Modify `src/my_project/main.py` to add custom inputs for your agents and tasks.
-    - Add your environment variables into the `.env` file.
-  </Step>
-</Steps>
-
 ## Build your first CrewAI Agent
 
-<Tip>
-  Let's create a simple crew that will help us `research` and `report` on the `latest AI developments`.
-</Tip>
+Let's create a simple crew that will help us `research` and `report` on the `latest AI developments` for a given topic or subject.
+
+Before we proceed, make sure you have `crewai` and `crewai-tools` installed. 
+If you haven't installed them yet, you can do so by following the [installation guide](/installation).
+
+Follow the steps below to get crewing! 🚣‍♂️
 
 <Steps>
   <Step title="Create your crew">
+  Create a new crew project by running the following command in your terminal.
+  This will create a new directory called `latest-ai-development` with the basic structure for your crew.
     <CodeGroup>
       ```shell Terminal
       crewai create crew latest-ai-development
       ```
     </CodeGroup>
   </Step>
-  <Step title="Modify the following files as needed to fit your use case">  
-  You can also copy and run them as is.
+  <Step title="Modify your `agents.yaml` file">  
+  <Tip>
+  You can also modify the agents as needed to fit your use case or copy and paste as is to your project.
+  </Tip>
     ```yaml agents.yaml
-    # src/my_project/config/agents.yaml
+    # src/latest_ai_development/config/agents.yaml
     researcher:
       role: >
         {topic} Senior Data Researcher
@@ -109,9 +50,9 @@ CrewAI uses [Poetry](https://python-poetry.org/) for dependency management and p
         it easy for others to understand and act on the information you provide.
     ```
   </Step>
-  <Step>  
+  <Step title="Modify your `tasks.yaml` file">  
     ```yaml tasks.yaml
-    # src/my_project/config/tasks.yaml
+    # src/latest_ai_development/config/tasks.yaml
     research_task:
       description: >
         Conduct a thorough research about {topic}
@@ -132,9 +73,9 @@ CrewAI uses [Poetry](https://python-poetry.org/) for dependency management and p
       output_file: report.md
     ```
   </Step>   
-  <Step>  
+  <Step title="Modify your `crew.py` file">  
     ```python crew.py
-    # src/my_project/crew.py
+    # src/latest_ai_development/crew.py
     from crewai import Agent, Crew, Process, Task
     from crewai.project import CrewBase, agent, crew, task
     from crewai_tools import SerperDevTool
@@ -168,7 +109,7 @@ CrewAI uses [Poetry](https://python-poetry.org/) for dependency management and p
       def reporting_task(self) -> Task:
         return Task(
           config=self.tasks_config['reporting_task'],
-          output_file='report.md'
+          output_file='output/report.md' # This is the file that will be contain the final report.
         )
 
       @crew
@@ -186,7 +127,7 @@ CrewAI uses [Poetry](https://python-poetry.org/) for dependency management and p
   For example, you can pass the `topic` input to your crew to customize the research and reporting to medical llms or any other topic.
     ```python main.py
     #!/usr/bin/env python
-    # src/my_project/main.py
+    # src/latest_ai_development/main.py
     import sys
     from latest_ai_development.crew import LatestAiDevelopmentCrew
 
@@ -209,7 +150,7 @@ CrewAI uses [Poetry](https://python-poetry.org/) for dependency management and p
     Lock the dependencies and install them by using the CLI command but first, navigate to your project directory:
     <CodeGroup>
       ```shell Terminal
-      cd my_project
+      cd latest-ai-development
       crewai install
       ```
     </CodeGroup>
@@ -226,9 +167,9 @@ CrewAI uses [Poetry](https://python-poetry.org/) for dependency management and p
   You should see the output in the console and the `report.md` file should be created in the root of your project with the final report.
 
   Here's an example of what the report should look like:
-  
+
   <CodeGroup>
-    ```markdown report.md
+    ```markdown output/report.md
     # Comprehensive Report on the Rise and Impact of AI Agents in 2024
 
     ## 1. Introduction to AI Agents
