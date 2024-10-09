@@ -134,7 +134,15 @@
         "tools/nl2sqltool",
         "tools/pdfsearchtool",
         "tools/pgsearchtool",
-        "tools/scrapewebsitetool"
+        "tools/scrapewebsitetool",
+        "tools/seleniumscrapingtool",
+        "tools/spidertool",
+        "tools/txtsearchtool",
+        "tools/visiontool",
+        "tools/websitesearchtool",
+        "tools/xmlsearchtool",
+        "tools/youtubechannelsearchtool",
+        "tools/youtubevideosearchtool"
       ]
     },
     {

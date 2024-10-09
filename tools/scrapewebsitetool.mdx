@@ -31,7 +31,8 @@ from crewai_tools import ScrapeWebsiteTool
 # To enable scrapping any website it finds during it's execution
 tool = ScrapeWebsiteTool()
 
-# Initialize the tool with the website URL, so the agent can only scrap the content of the specified website
+# Initialize the tool with the website URL, 
+# so the agent can only scrap the content of the specified website
 tool = ScrapeWebsiteTool(website_url='https://www.example.com')
 
 # Extract the text from the site
@@ -41,4 +42,6 @@ print(text)
 
 ## Arguments
 
-- `website_url` : Mandatory website URL to read the file. This is the primary input for the tool, specifying which website's content should be scraped and read.
+| Argument       | Type     | Description                                                                                                                         |
+|:---------------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------|
+| **website_url**  | `string`   | **Mandatory** website URL to read the file. This is the primary input for the tool, specifying which website's content should be scraped and read.                                                |

@@ -10,12 +10,19 @@ icon: signal-stream
     By default, we collect no data that would be considered personal information under GDPR and other privacy regulations.
     We do collect Tool's names and Agent's roles, so be advised not to include any personal information in the tool's names or the Agent's roles.
 	Because no personal information is collected, it's not necessary to worry about data residency.
-	When `share_crew` is enabled, additional data is collected which may contain personal information if included by the user. Users should exercise caution when enabling this feature to ensure compliance with privacy regulations.
+	When `share_crew` is enabled, additional data is collected which may contain personal information if included by the user. 
+    Users should exercise caution when enabling this feature to ensure compliance with privacy regulations.
 </Note>
-CrewAI utilizes anonymous telemetry to gather usage statistics with the primary goal of enhancing the library. Our focus is on improving and developing the features, integrations, and tools most utilized by our users.
 
-It's pivotal to understand that by default, **NO personal data is collected** concerning prompts, task descriptions, agents' backstories or goals, usage of tools, API calls, responses, any data processed by the agents, or secrets and environment variables.
-When the `share_crew` feature is enabled, detailed data including task descriptions, agents' backstories or goals, and other specific attributes are collected to provide deeper insights. This expanded data collection may include personal information if users have incorporated it into their crews or tasks. Users should carefully consider the content of their crews and tasks before enabling `share_crew`. Users can disable telemetry by setting the environment variable OTEL_SDK_DISABLED to true.
+CrewAI utilizes anonymous telemetry to gather usage statistics with the primary goal of enhancing the library. 
+Our focus is on improving and developing the features, integrations, and tools most utilized by our users.
+
+It's pivotal to understand that by default, **NO personal data is collected** concerning prompts, task descriptions, agents' backstories or goals, 
+usage of tools, API calls, responses, any data processed by the agents, or secrets and environment variables.
+When the `share_crew` feature is enabled, detailed data including task descriptions, agents' backstories or goals, and other specific attributes are collected 
+to provide deeper insights. This expanded data collection may include personal information if users have incorporated it into their crews or tasks. 
+Users should carefully consider the content of their crews and tasks before enabling `share_crew`. 
+Users can disable telemetry by setting the environment variable `OTEL_SDK_DISABLED` to `true`.
 
 ### Data Explanation:
 | Defaulted | Data                                      | Reason and Specifics                                                                                                       |
@@ -40,7 +47,10 @@ When the `share_crew` feature is enabled, detailed data including task descripti
 </Note>
 
 ### Opt-In Further Telemetry Sharing
-Users can choose to share their complete telemetry data by enabling the `share_crew` attribute to `True` in their crew configurations. Enabling `share_crew` results in the collection of detailed crew and task execution data, including `goal`, `backstory`, `context`, and `output` of tasks. This enables a deeper insight into usage patterns.
+
+Users can choose to share their complete telemetry data by enabling the `share_crew` attribute to `True` in their crew configurations. 
+Enabling `share_crew` results in the collection of detailed crew and task execution data, including `goal`, `backstory`, `context`, and `output` of tasks. 
+This enables a deeper insight into usage patterns.
 
 <Warning>
     If you enable `share_crew`, the collected data may include personal information if it has been incorporated into crew configurations, task descriptions, or outputs. 

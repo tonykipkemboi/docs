@@ -33,17 +33,21 @@ Employing the DirectoryReadTool is straightforward. The following code snippet d
 ```python Code
 from crewai_tools import DirectoryReadTool
 
-# Initialize the tool so the agent can read any directory's content it learns about during execution
+# Initialize the tool so the agent can read any directory's content 
+# it learns about during execution
 tool = DirectoryReadTool()
 
 # OR
 
-# Initialize the tool with a specific directory, so the agent can only read the content of the specified directory
+# Initialize the tool with a specific directory, 
+# so the agent can only read the content of the specified directory
 tool = DirectoryReadTool(directory='/path/to/your/directory')
 ```
 
 ## Arguments
 
-The DirectoryReadTool requires minimal configuration for use. The essential argument for this tool is as follows:
+The following parameters can be used to customize the `DirectoryReadTool`'s behavior:
 
-- `directory`: **Optional**. An argument that specifies the path to the directory whose contents you wish to list. It accepts both absolute and relative paths, guiding the tool to the desired directory for content listing.
+| Argument       | Type     | Description                                                                                                                         |
+|:---------------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------|
+| **directory**  | `string` | _Optional_. An argument that specifies the path to the directory whose contents you wish to list. It accepts both absolute and relative paths, guiding the tool to the desired directory for content listing. |

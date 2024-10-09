@@ -7,7 +7,8 @@ icon: database
 # `PGSearchTool`
 
 <Note>
-    The PGSearchTool is currently under development. This document outlines the intended functionality and interface. As development progresses, please be aware that some features may not be available or could change.
+    The PGSearchTool is currently under development. This document outlines the intended functionality and interface. 
+    As development progresses, please be aware that some features may not be available or could change.
 </Note>
 
 ## Description
@@ -37,15 +38,20 @@ Below is a proposed example showcasing how to use the PGSearchTool for conductin
 from crewai_tools import PGSearchTool
 
 # Initialize the tool with the database URI and the target table name
-tool = PGSearchTool(db_uri='postgresql://user:password@localhost:5432/mydatabase', table_name='employees')
+tool = PGSearchTool(
+    db_uri='postgresql://user:password@localhost:5432/mydatabase', 
+    table_name='employees'
+)
 ```
 
 ## Arguments
 
 The PGSearchTool is designed to require the following arguments for its operation:
 
-- `db_uri`: A string representing the URI of the PostgreSQL database to be queried. This argument will be mandatory and must include the necessary authentication details and the location of the database.
-- `table_name`: A string specifying the name of the table within the database on which the semantic search will be performed. This argument will also be mandatory.
+| Argument       | Type     | Description                                                                                                                         |
+|:---------------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------|
+| **db_uri**     | `string` | **Mandatory**. A string representing the URI of the PostgreSQL database to be queried. This argument will be mandatory and must include the necessary authentication details and the location of the database. |
+| **table_name** | `string` | **Mandatory**. A string specifying the name of the table within the database on which the semantic search will be performed. This argument will also be mandatory. |
 
 ## Custom Model and Embeddings
 
